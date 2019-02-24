@@ -1,0 +1,62 @@
+<div class="paginationOuterWrapper">
+  <h2 class="heading">Autocomplete with pagination Component</h2>
+  <h4>Component Description:</h4>
+  <ul>
+    <li>This component allows autocomplete functionality with pagination based on provided array</li>
+    <li>Based on current search text, search results and pagination will get updated.</li>
+    <li>Autocomplete results will be retrieved even with single letter search.</li>
+    <li>When you select any item in search result box, the selected item gets populated in search text box.</li>    
+  </ul>
+  
+  <h4>Component Key Features:</h4>
+  <ul>
+    <li>This component basically provides combined features of two functionalities, one is autocomplete and another one is pagination</li>
+    <li>User can cusomize the array or assigned dynamic array</li>
+    <li>User can customize the no of items to be displayed as per choice using "pageSize" variable</li>
+    <li>User can select only one item and selected item is displayed below the search text box.</li>
+  </ul>
+  <!-- <code>
+    <![CDATA[
+    //movies object array
+    movies = [
+      {
+        name: "jab we met",
+        title: "jab we met"
+      },
+      {
+        name: "mumbai pune mumbai",
+        title: "mumbai pune mumbai"
+      },
+      {
+        name: "dhkmn",
+        title: "dhkmn"
+      },
+      {
+        name: "arya",
+        title: "arya"
+      },
+      {
+        name: "barfi",
+        title: "barfi"
+      },
+      {
+        name: "banvabanvi",
+        title: "banvabanvi"
+      },
+      {
+        name: "Mohabattein",
+        title: "Mohabattein"
+      }
+  
+    ];
+    curPage = 1; //current page in pagination
+    pageSize = 3; //total no of pages in pagination  
+      ]]>
+  </code> -->
+  <p>Variables need to cutomise are</p>
+  <ul>
+    <li>movies array</li>    
+    <li>pageSize</li>      
+  </ul>    
+  <app-autocomplete-pagination></app-autocomplete-pagination>
+</div>

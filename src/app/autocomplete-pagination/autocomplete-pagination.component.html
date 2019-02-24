@@ -1,0 +1,48 @@
+<div class="paginationWrapper">
+  
+  <div class="container">
+    <!--autocomplete box-->
+    <input type="text" class="searchBox" [(ngModel)]="searchText" (keyup)="funcShowResultBox()" placeholder="search movie">
+    <!--autocomplete box-->
+
+    <!--resultbox starts-->
+    <div class="resultBoxWrapper" *ngIf="showResultBox">
+      <!--autocomplete result list starts-->
+      <div *ngFor="let movie of updatedMovies;let index =index; let isOdd=odd;let isEven=even" [class.odd]="isOdd" 
+      [class.even]="isEven" class="resultItem" (click)="itemClick(movie.title)">
+        {{movie.title}}
+      </div>
+      <!--autocomplete result list ends-->
+
+      <!--pagination starts-->
+      <!--<p class="pagination">
+        <button [disabled] ="curPage == 1" (click)="prev()"><</button>
+          <span>Page {{curPage}} of {{totalPages}}</span>
+        <button [disabled] = "curPage >= totalPages" 
+                (click) ="next()">></button>
+      </p>-->
+
+      <div class="pagination-wrapper">
+        <div class="pagination">
+          <button [disabled]="curPage == 1" (click)="prev()" class="btnPrev">&laquo;</button>
+          <a *ngFor="let page of getTotalNoOfPages(totalPages); let i=index;" class="active" (click)="pageClick(i)"> 
+            {{page}}
+          </a>
+          
+          <button [disabled]="curPage >= totalPages" (click) ="next()" class="btnNext">&raquo;</button>
+        </div>
+      </div>
+      <!--pagination ends-->
+      
+    </div>
+    <!--resultbox ends-->
+
+    <!--showing selected results-->
+    <div *ngIf="!showResultBox">
+      <div class="selectedValue" *ngIf="searchText">Selected movie name is <b>{{searchText}}</b></div>
+      <!--showing selected results-->
+      <div class="selectedValue" *ngIf="!searchText">No movie selected</div>
+    </div>
+    
+  </div>
+</div>
